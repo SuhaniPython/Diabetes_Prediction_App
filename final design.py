@@ -76,11 +76,11 @@ def values():
     Prediction_result = loaded_model.predict([[pregnancies, glucose ,blood_pressure, skin_thickness, insulin, BMI, age, diabetes_pedigree]])
 
     if list(Prediction_result) == [0]:
-        output= entry1.get()+ ' has not got diabetes. No need to worry :)'
+        output= entry1.get()+ ' is not likely to have diabetes. No need to worry :)'
         print(output)
 
     else:
-        output= entry1.get()+ ' has got diabetes. Please consult a doctor '
+        output= entry1.get()+ ' is likely to have diabetes. Please consult a doctor '
         print(output)
         
     label_Prediction = tk.Label(root, text=  output, bg='orange')
@@ -88,9 +88,8 @@ def values():
     print(Prediction_result)
 
 
-button = tk.Button (root, text='Submit',command=values, bg='orange')
+button = tk.Button (root, text='Submit',command=values, bg='white')
 canvas.create_window(250, 350, window=button)
 
 
 root.mainloop()
-
